@@ -1,0 +1,61 @@
+@import-normalize;
+
+@import "./styles/variables";
+@import "./styles/common/common";
+@import "~react-calendar/dist/Calendar.css";
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+
+html {
+  width: 100%;
+  max-width: 100%;
+  font-size: 100%;
+
+  // @include for-size(tablet-lanscape-up) {
+  @media only screen and (min-width: 991px) {
+    height: 100%;
+    font-size: 100%;
+  }
+}
+
+body {
+  height: 100vh;
+  max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.root {
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+  background-image: rgba(0, 0, 0, 0.5);
+}
+
+.modal-video-close-btn {
+  cursor: pointer;
+}

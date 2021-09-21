@@ -1,0 +1,17 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin fontFacePrimary() {
+  font-family: Robboto;
+}
+
+@mixin fontFaceSecondary() {
+  font-family: Poppins;
+}
