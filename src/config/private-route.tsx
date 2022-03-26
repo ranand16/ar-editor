@@ -1,5 +1,5 @@
 import React from "react";
-import get from "lodash.get";
+import { get } from "lodash";
 import { connect } from "react-redux";
 import { Route, Redirect, RouteProps } from "react-router-dom";
 import { RootReducer } from "../reducer";
@@ -12,7 +12,8 @@ interface OwnProps extends RouteProps {
   component: any;
 }
 
-export interface PrivateRouteProps extends OwnProps, StateProps { }
+// export interface PrivateRouteProps extends OwnProps, StateProps { }
+export type PrivateRouteProps = OwnProps;
 
 export const PrivateRouteComponent = ({
   component: Component,
@@ -44,7 +45,7 @@ export const PrivateRouteComponent = ({
         }}
       />
     );
-    // isAuthenticated 
+    // isAuthenticated
     // false ? (
     //   checkAuthorities(props)
     // ) : (
@@ -60,7 +61,8 @@ export const PrivateRouteComponent = ({
 
   if (!Component) {
     throw new Error(
-      `A component needs to be specified for private route for path ${(rest as any).path
+      `A component needs to be specified for private route for path ${
+        (rest as any).path
       }`
     );
   }
@@ -81,16 +83,17 @@ export const hasAnyAuthority = (
   return false;
 };
 
-interface StateProps {
-  // isAuthenticated: boolean;
-  // isAuthorized: boolean;
-}
+// interface StateProps {
+// isAuthenticated: boolean;
+// isAuthorized: boolean;
+// }
 
 const mapStateToProps = (
   state: RootReducer,
-  { hasAnyAuthorities = [] }: OwnProps
-): StateProps => {
-  return {};
+  {}: OwnProps
+): // { hasAnyAuthorities = [] }: OwnProps
+any => {
+  // return {};
   // const { authentication } = state || {};
   // const { userInfo, isLoggedIn } = authentication || {};
   // return {
